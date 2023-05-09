@@ -20,7 +20,10 @@ public class Test {
         List<String> filteredWords = Main.filter(word -> word.length() > 4, words);
         System.out.println(filteredWords);
 
-        
+        // Test reduce function
+        List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5);
+        int sum = Main.reduce(Integer::sum, nums, 0);
+        System.out.println(sum);
 
 
     }
