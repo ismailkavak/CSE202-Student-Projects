@@ -43,6 +43,22 @@ public class Main {
         // Return the new list of filtered elements
         return filteredList;
     }
+
+    // Define a generic method named reduce that takes a binary function, a list of elements, and an optional initial value
+    public static <T> T reduce(BiFunction<T, T, T> function, List<T> list, T initialValue) {
+
+        // Initialize an accumulator variable to the initial value (or the first element of the list if no initial value is provided)
+        T accumulator = initialValue != null ? initialValue : list.get(0);
+
+        // Iterate over the remaining elements of the list and apply the binary function to the accumulator and the current element
+        for (int i = 1; i < list.size(); i++) {
+            T element = list.get(i);
+            accumulator = function.apply(accumulator, element);
+        }
+
+        // Return the accumulated result
+        return accumulator;
+    }
 }
 
 
