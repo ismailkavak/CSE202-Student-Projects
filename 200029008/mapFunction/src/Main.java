@@ -59,6 +59,11 @@ public class Main {
         // Return the accumulated result
         return accumulator;
     }
+
+    // Define a method named compose that takes two Function objects and returns their composition
+    public static <T, U, V> Function<T, V> compose(Function<U, V> g, Function<T, U> f) {
+        return x -> g.apply(f.apply(x));
+    }
 }
 
 
