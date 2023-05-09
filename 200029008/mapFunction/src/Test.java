@@ -25,7 +25,14 @@ public class Test {
         int sum = Main.reduce(Integer::sum, nums, 0);
         System.out.println(sum);
 
+        // Test compose function
+        Function<Integer, Integer> addOne = x -> x + 1;
+        Function<Integer, Integer> multiplyByTwo = x -> x * 2;
+        Function<Integer, Integer> composed = Main.compose(multiplyByTwo, addOne);
+        int result = composed.apply(5);
+        System.out.println(result);
 
+        
     }
 
 }
